@@ -1,0 +1,14 @@
+<h2>All Products</h2>
+
+{% for product in products %}
+<div style="margin-bottom:20px;">
+    <h3>{{ product.name }}</h3>
+    <p>Price: Ksh {{ product.price }}</p>
+    <p>Category: {{ product.category.name }}</p>
+    {% if product.image %}
+        <img src="{{ product.image.url }}" width="150">
+    {% endif %}
+    <p><a href="/products/{{ product.id }}/">View Details</a></p>
+</div>
+<hr>
+{% endfor %}
